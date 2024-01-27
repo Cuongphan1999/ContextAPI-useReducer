@@ -1,11 +1,21 @@
+import { useState } from 'react'
 import './App.css'
+import Panel from './components/panel'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [theme, setTheme] = useState('light')
+  const handleChangeTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
   return (
     <>
-      
+      <div className={`container w-50 p-3 border ${theme}`}>
+        {/* <button className={`btn btn-sm ${theme === 'light' ? 'btn-dark' : 'btn-secondary'}`}
+          onClick={handleChangeTheme}
+        >Dark Mode</button> */}
+        <Panel theme={theme} handleChangeTheme={handleChangeTheme} />
+      </div>
     </>
   )
 }
