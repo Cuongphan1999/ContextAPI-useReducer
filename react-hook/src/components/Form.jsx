@@ -1,7 +1,5 @@
 import { useContext } from "react"
-import { ThemeContext } from "../App"
-
-
+import { ThemeContext } from "../context/ThemContext"
 export default function Form() {
     const {theme, handleChangeTheme} = useContext(ThemeContext) //su dung data trong form -> sd themcontext thif thong qua usecontext
     //console.log('Form');
