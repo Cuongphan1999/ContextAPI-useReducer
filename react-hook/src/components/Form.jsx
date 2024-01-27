@@ -1,9 +1,13 @@
+import { useContext } from "react"
+import { ThemeContext } from "../App"
 
-export default function Form({ theme, handleChangeTheme }) {
-    console.log('Form', theme);
+
+export default function Form() {
+    const {theme, handleChangeTheme} = useContext(ThemeContext) //su dung data trong form -> sd themcontext thif thong qua usecontext
+    //console.log('Form');
     return (
         <>
-            <button className={`btn btn-sm d-flex ${theme === 'light' ? 'btn-dark' : 'btn-secondary'}`}
+            <button className={`btn btn-sm d-flex ${theme=== 'light' ? 'btn-dark' : 'btn-secondary'}`}
                 onClick={handleChangeTheme}
             >Dark Mode</button>
             <form className={`p-3 border ${theme}`}>
